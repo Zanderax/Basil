@@ -8,7 +8,7 @@ int main( void )
 
 	long int size = readSourceFromFile( fileName, &source );
 
-	int i, lineNumber=1, sourceValue = 0;
+	int i, lineNumber=1, programCounter= 0;
 	for( i = 0; i < size; ++i )
 	{
 		switch( source[i] )
@@ -17,10 +17,10 @@ int main( void )
 				lineNumber++;
 				break;
 			case PLUS:
-				sourceValue++;
+				programCounter++;
 				break;
 			case MINUS:
-				sourceValue--;
+				programCounter--;
 				break;
 			default:
 				printError( source[i], lineNumber );
@@ -28,7 +28,7 @@ int main( void )
 		}
 	}
 
-	printf( "%d\n", sourceValue );
+	printf( "%d\n", programCounter );
 
 	return 0;
 }
