@@ -7,6 +7,7 @@
 
 typedef enum SYMBOLS { 
 	PLUS = '+',
+	MINUS = '-',
 	NEW_LINE = 10,
 } SYMBOLS;
 

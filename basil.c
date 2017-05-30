@@ -8,7 +8,7 @@ int main( void )
 
 	long int size = readSourceFromFile( fileName, &source );
 
-	int i, lineNumber=1;
+	int i, lineNumber=1, sourceValue = 0;
 	for( i = 0; i < size; ++i )
 	{
 		switch( source[i] )
@@ -17,13 +17,18 @@ int main( void )
 				lineNumber++;
 				break;
 			case PLUS:
+				sourceValue++;
+				break;
+			case MINUS:
+				sourceValue--;
 				break;
 			default:
 				printError( source[i], lineNumber );
+				return -1;
 		}
 	}
 
-	printf( "File Size = %ld\n", size );
+	printf( "%d\n", sourceValue );
 
 	return 0;
 }
