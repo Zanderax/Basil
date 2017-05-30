@@ -22,6 +22,14 @@ int main( void )
 			case MINUS:
 				programCounter--;
 				break;
+			case MULTIPLY:
+				if( isNumber( source[i+1] ) )
+				{
+					programCounter *= toNum( source[++i] );
+					break;
+				}
+				printError( source[i], lineNumber );
+				return -1;
 			default:
 				printError( source[i], lineNumber );
 				return -1;
@@ -31,6 +39,16 @@ int main( void )
 	printf( "%d\n", programCounter );
 
 	return 0;
+}
+
+int isNumber( char c )
+{
+	return !( c < 48 && c > 57 );
+}
+
+int toNum( char c )
+{
+	return c - 48;
 }
 
 long int readSourceFromFile( char* fileName, char** source )
