@@ -2,6 +2,8 @@ BASIL
 ================================================================================
 A Programming Language
 
-Valid Symbols:\n
-'+' - Add 1 to Program Counter\n
+Valid Symbols:
+
+'+' - Add 1 to Program Counter
+
 '-' - Minus 1 from Program Counter
